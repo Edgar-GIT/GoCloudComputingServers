@@ -1,0 +1,172 @@
+:root {
+  --background: 230 25% 8%;
+  --foreground: 220 15% 90%;
+  --card: 230 20% 12%;
+  --card-foreground: 220 15% 90%;
+  --primary: 237 70% 65%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 230 15% 18%;
+  --secondary-foreground: 220 15% 90%;
+  --muted: 230 15% 15%;
+  --muted-foreground: 220 10% 60%;
+  --accent: 270 60% 60%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 230 15% 20%;
+  --input: 230 15% 20%;
+  --ring: 237 70% 65%;
+  --radius: 0.75rem;
+  --shadow-elegant: 0 10px 40px -10px hsla(237, 70%, 65%, 0.4);
+  --shadow-glow: 0 0 20px hsla(237, 70%, 65%, 0.3);
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background: linear-gradient(135deg, hsl(var(--background)), hsl(230 15% 15%), hsl(var(--background)));
+  color: hsl(var(--foreground));
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.btn-custom-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: all 0.3s;
+  overflow: hidden;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
+  background-size: 200% 100%;
+  color: hsl(var(--primary-foreground));
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-custom-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-200%);
+  transition: transform 0.7s;
+}
+
+.btn-custom-primary:hover {
+  background-position: 100% 0;
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-custom-primary:hover::before {
+  transform: translateX(200%);
+}
+
+.btn-custom-primary:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-custom-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: all 0.3s;
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.btn-custom-secondary:hover {
+  background: hsla(var(--secondary), 0.8);
+  border-color: hsl(var(--primary));
+  transform: scale(1.05);
+}
+
+.welcome-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.card-custom {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-elegant);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo-wrapper {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+}
+
+.logo-img {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+}
+
+.welcome-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.welcome-description {
+  font-size: 1.25rem;
+  color: hsl(var(--muted-foreground));
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.welcome-content {
+  animation: fade-in 0.5s ease-out;
+}

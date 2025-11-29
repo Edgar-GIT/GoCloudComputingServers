@@ -1,0 +1,50 @@
+# Diretório de dados (ignorar tudo dentro)
+data/
+
+# Especificamente ignorar pasta do admin
+data/files/admin/
+
+# Ficheiros de explicação/documentação
+EXPLICACAO_TOKENS_VS_FICHEIROS.md
+O_QUE_FAZ_O_TOKEN.md
+SISTEMA_LOGIN_COMPLETO.md
+
+# Binários compilados
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+filemanager
+filemanager.exe
+
+# Teste binário
+*.test
+
+# Output do compilador
+*.out
+
+# Go workspace file
+go.work
+
+# Dependências
+vendor/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporários
+*.tmp
+*.temp
+
